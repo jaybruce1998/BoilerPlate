@@ -30,7 +30,7 @@ public class BoilerPlate
          g+=", "+f;
          c+="\n\t\tthis."+v+"="+v+";";
          m+="\n\tpublic "+a[i]+" get"+u+"()\n\t{\n\t\treturn "+v+";\n\t}\n\tpublic void set"+u+"("+f+")\n\t{\n\t\tthis."+v+"="+v+";\n\t}";
-         s+="\n\t\t\t+\""+u+": \"+"+v+"+\"\\n\"";
+         s+="\n\t\t\t+\""+u.replaceAll("([A-Z])", " $1").substring(1)+": \"+"+v+"+\"\\n\"";
       }
       r+="\n\tpublic "+a[0]+"("+g.substring(2)+")\n\t{"+c+"\n\t}"+m+"\n\tpublic String toString()\n\t{\n\t\treturn "+s.substring(5, s.length()-5)+";\n\t}\n}";
       try
